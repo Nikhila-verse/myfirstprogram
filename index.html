@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nikhila J — Portfolio</title>
+  <meta name="description" content="Portfolio of Nikhila J, an 11th-grade PCMC student at SEI Maruthu PU College." />
+  <style>
+    :root {
+      --bg:#0f1115;
+      --panel:#151823;
+      --panel-alt:#0f131c;
+      --text:#e9ecf1;
+      --muted:#b3b9c6;
+      --accent:#6ea8fe;
+      --accent-2:#9b8cff;
+      --border:rgba(255,255,255,0.08);
+      --shadow:0 10px 30px rgba(0,0,0,0.35);
+      --radius:18px;
+    }
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; padding:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; line-height:1.6; }
+    .container{ width:min(1100px, 92%); margin-inline:auto; }
+
+    .site-header{ position:sticky; top:0; backdrop-filter:saturate(140%) blur(8px); background:linear-gradient(to bottom, rgba(15,17,21,0.9), rgba(15,17,21,0.6)); border-bottom:1px solid var(--border); }
+    .header-inner{ display:flex; align-items:center; justify-content:space-between; padding:16px 0; }
+    .brand{ display:flex; gap:12px; align-items:center; }
+    .logo{ width:44px; height:44px; border-radius:12px; background:linear-gradient(135deg, var(--accent), var(--accent-2)); display:grid; place-items:center; color:#0b0d12; font-weight:800; box-shadow:var(--shadow); }
+    .brand-text .name{ margin:0; font-size:1.25rem; }
+    .brand-text .tagline{ margin:2px 0 0; color:var(--muted); font-size:0.95rem; }
+    .nav a{ color:var(--text); text-decoration:none; margin-left:16px; padding:8px 12px; border-radius:10px; border:1px solid transparent; }
+    .nav a:hover{ border-color:var(--border); background:rgba(255,255,255,0.04); }
+
+    .hero{ padding:56px 0 28px; border-bottom:1px solid var(--border);
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(110,168,254,0.18), transparent 60%),
+                  radial-gradient(1000px 500px at 100% 0%, rgba(155,140,255,0.14), transparent 60%);}
+    .hero-inner{ display:grid; grid-template-columns: 1.2fr 0.8fr; gap:28px; align-items:center; }
+    .hero-text h2{ margin:0 0 8px; font-size:2rem; }
+    .hero-text p{ color:var(--muted); margin:0 0 16px; }
+    .cta{ display:flex; gap:12px; }
+    .btn{ display:inline-block; padding:10px 16px; border-radius:12px; font-weight:600; border:1px solid var(--border); text-decoration:none; color:var(--text); }
+    .btn.primary{ background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#0b0d12; }
+    .btn.outline{ background:transparent; }
+
+    .hero-photo{ background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:12px; text-align:center; box-shadow:var(--shadow);}
+    .hero-photo img{ width:100%; height:auto; border-radius:12px; }
+
+    .section{ padding:48px 0; }
+    .section.alt{ background:var(--panel-alt); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .section h3{ margin-top:0; font-size:1.4rem; }
+    .two-col{ display:grid; grid-template-columns: 1.1fr 0.9fr; gap:24px; align-items:start; }
+
+    .skills-grid{ display:grid; gap:18px; grid-template-columns: repeat(3, 1fr); }
+    .skill{ background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow); }
+
+    .edu-card{ display:flex; justify-content:space-between; align-items:center; background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow);}
+    .grades{ display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; margin-top:12px;}
+    .grade-item{ background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:12px; text-align:center;}
+
+    .project.planned{ background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow);}
+    .hobby-list{ display:flex; flex-wrap:wrap; gap:12px; list-style:none; padding:0; }
+    .hobby-list li{ background:var(--panel); border:1px solid var(--border); border-radius:999px; padding:8px 12px; }
+
+    .site-footer{ padding:28px 0; border-top:1px solid var(--border); color:var(--muted); text-align:center; }
+
+    @media (max-width: 940px){
+      .hero-inner{ grid-template-columns: 1fr; }
+      .two-col{ grid-template-columns: 1fr; }
+      .skills-grid{ grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px){
+      .nav{ display:none; }
+      .skills-grid{ grid-template-columns: 1fr; }
+      .grades{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">NJ</div>
+        <div class="brand-text">
+          <h1 class="name">Nikhila J</h1>
+          <p class="tagline">11th Grade • PCMC • SEI Maruthu PU College</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h2>Curious mind. Strong basics. Future-ready.</h2>
+          <p>I’m an 11th-grade PCMC student building a strong foundation in science and technology. I enjoy problem solving, learning new concepts, and turning ideas into simple, useful projects.</p>
+          <div class="cta">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn outline" href="#contact">Contact Me</a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <img src="profile.jpg" alt="Portrait of Nikhila J" />
+          <p class="photo-note">Add your photo as <strong>profile.jpg</strong> in the same folder.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container two-col">
+        <div>
+          <h3>About Me</h3>
+          <p>Hello! I’m <strong>Nikhila J</strong>, studying at <strong>SEI Maruthu PU College</strong> in the PCMC stream. I’m focused on academic excellence and growing my technical skills step by step.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section alt">
+      <div class="container">
+        <h3>Skills</h3>
+        <div class="skills-grid">
+          <div class="skill">
+            <h4>Programming</h4>
+            <p>HTML</p>
+            <p>Learning Python</p>
+          </div>
+          <div class="skill">
+            <h4>Database</h4>
+            <p>SQL (basics)</p>
+          </div>
+          <div class="skill">
+            <h4>Soft Skills</h4>
+            <p>Strong communication</p>
+            <p>Active listening</p>
+            <p>Focus on academic excellence</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <div class="container">
+        <h3>Education</h3>
+        <div class="edu-card">
+          <div>
+            <h4>SEI Maruthu PU College</h4>
+            <p>11th Standard — PCMC</p>
+          </div>
+        </div>
+        <div class="grades">
+          <div class="grade-item"><span>10th (SSLC)</span><br>82%</div>
+          <div class="grade-item"><span>9th</span><br>86%</div>
+          <div class="grade-item"><span>8th</span><br>84%</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section alt">
+      <div class="container">
+        <h3>Projects</h3>
+        <div class="project planned">
+          <h4>Planned Projects</h4>
+          <ul>
+            <li>Personal portfolio website enhancements</li>
+            <li>Beginner-friendly database app (SQL)</li>
+            <li>Exploratory mini-tasks to strengthen logic</li>
+          </ul>
+          <p>I haven’t completed formal projects yet; I’m currently building strong fundamentals and planning small, practical projects to apply what I learn.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="hobbies" class="section">
+      <div class="container">
+        <h3>Hobbies & Interests</h3>
+        <ul class="hobby-list">
+          <li>Music</li>
+          <li>Cooking</li>
+          <li>Photography</li>
+          <li>Acknowledging new concepts</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section alt">
+      <div class="container">
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:jnikhila557@gmail.com">jnikhila557@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/Nikhila-verse" target="_blank">github.com/Nikhila-verse</a></p>
+        <p>LinkedIn: <em>Add your profile link here</em></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Nikhila J • Built with care</p>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
